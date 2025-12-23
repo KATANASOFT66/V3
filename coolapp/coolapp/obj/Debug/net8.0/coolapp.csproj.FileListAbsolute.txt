@@ -1,0 +1,14 @@
+D:\trash\coolapp\coolapp\bin\Debug\net8.0\coolapp.exe
+D:\trash\coolapp\coolapp\bin\Debug\net8.0\coolapp.deps.json
+D:\trash\coolapp\coolapp\bin\Debug\net8.0\coolapp.runtimeconfig.json
+D:\trash\coolapp\coolapp\bin\Debug\net8.0\coolapp.dll
+D:\trash\coolapp\coolapp\bin\Debug\net8.0\coolapp.pdb
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.AssemblyInfoInputs.cache
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.AssemblyInfo.cs
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.csproj.CoreCompileInputs.cache
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.dll
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\refint\coolapp.dll
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.pdb
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\coolapp.genruntimeconfig.cache
+D:\trash\coolapp\coolapp\obj\Debug\net8.0\ref\coolapp.dll
