@@ -13,7 +13,7 @@ namespace UltimatePingOptimizer
     {
         static ConsoleColor defaultColor = Console.ForegroundColor;
 
-        // Memory cleaning
+       
         [DllImport("psapi.dll")]
         static extern int EmptyWorkingSet(IntPtr hwProc);
 
@@ -111,9 +111,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ╔═══════════════════════════════════════════════════════════════╗
-        // ║              ⚡ MAX LOW PING MODE (EXTREME) ⚡                 ║
-        // ╚═══════════════════════════════════════════════════════════════╝
+       
         static void MaxLowPingMode()
         {
             Console.Clear();
@@ -148,82 +146,77 @@ namespace UltimatePingOptimizer
             int totalSteps = 15;
             int currentStep = 0;
 
-            // Step 1: Create Restore Point
+       
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Creating System Restore Point");
             CreateRestorePoint();
 
-            // Step 2: Kill ALL Bandwidth Hogs
+      
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Killing ALL Bandwidth Apps");
             KillAllBandwidthApps();
 
-            // Step 3: Clean RAM
+         
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Cleaning RAM Memory");
             CleanRAM();
 
-            // Step 4: Flush DNS
+   
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Flushing DNS Cache");
             FlushAndResetNetworkSilent();
 
-            // Step 5: Apply Extreme TCP Optimizations
+         
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Applying EXTREME TCP Settings");
             ApplyExtremeTcpOptimizations();
 
-            // Step 6: Disable Nagle Completely
+   
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Disabling Nagle Algorithm");
             DisableNagleComplete();
 
-            // Step 7: Set Cloudflare DNS
+  
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Setting Cloudflare DNS (1.1.1.1)");
             SetCloudflareDNSSilent();
 
-            // Step 8: Disable Network Throttling
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Disabling Network Throttling");
             DisableNetworkThrottling();
 
-            // Step 9: Optimize MTU
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Optimizing MTU Settings");
             OptimizeMTU();
 
-            // Step 10: Disable Unnecessary Services
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Disabling Background Services");
             DisableServicesSilent();
 
-            // Step 11: Set High Performance Power Plan
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Enabling High Performance Mode");
             SetHighPerformance();
 
-            // Step 12: Optimize Network Adapter
+  
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Optimizing Network Adapter");
             OptimizeAdapterExtreme();
 
-            // Step 13: Disable Windows Auto-Tuning
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Disabling Windows Auto-Tuning");
             DisableAutoTuning();
 
-            // Step 14: Set QoS Priority
+
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Setting QoS Priority for Gaming");
             SetQoSPriority();
 
-            // Step 15: Boost Roblox Priority
+          
             currentStep++;
             ShowProgress(currentStep, totalSteps, "Boosting Roblox Priority");
             BoostRobloxPrioritySilent();
 
-            // Complete!
+          
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
@@ -242,7 +235,7 @@ namespace UltimatePingOptimizer
             ");
             Console.ForegroundColor = defaultColor;
 
-            // Test ping after optimization
+       on
             Console.Write("\n  Test ping now? (y/n): ");
             if (Console.ReadLine()?.ToLower() == "y")
             {
@@ -268,7 +261,7 @@ namespace UltimatePingOptimizer
             Thread.Sleep(500);
         }
 
-        // ========== EXTREME TCP OPTIMIZATIONS ==========
+       
         static void ApplyExtremeTcpOptimizations()
         {
             string[] commands = {
@@ -294,7 +287,7 @@ namespace UltimatePingOptimizer
                 RunCommand(cmd);
             }
 
-            // Extreme Registry Optimizations
+
             try
             {
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(
@@ -339,7 +332,7 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== DISABLE NAGLE COMPLETE ==========
+     
         static void DisableNagleComplete()
         {
             try
@@ -368,7 +361,7 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== DISABLE NETWORK THROTTLING ==========
+      
         static void DisableNetworkThrottling()
         {
             try
@@ -384,7 +377,7 @@ namespace UltimatePingOptimizer
                     }
                 }
 
-                // Gaming Profile
+                
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(
                     @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games", true))
                 {
@@ -417,7 +410,7 @@ namespace UltimatePingOptimizer
                     }
                 }
 
-                // Disable QoS Bandwidth Limit
+               
                 using (RegistryKey key = Registry.LocalMachine.CreateSubKey(
                     @"SOFTWARE\Policies\Microsoft\Windows\Psched"))
                 {
@@ -427,7 +420,6 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== OPTIMIZE MTU ==========
         static void OptimizeMTU()
         {
             string adapterName = GetActiveAdapterName();
@@ -437,7 +429,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== SET HIGH PERFORMANCE ==========
+       
         static void SetHighPerformance()
         {
             string[] commands = {
@@ -453,16 +445,16 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== OPTIMIZE ADAPTER EXTREME ==========
+      
         static void OptimizeAdapterExtreme()
         {
             string adapterName = GetActiveAdapterName();
             if (string.IsNullOrEmpty(adapterName)) return;
 
-            // Disable power saving
+         
             RunCommand($"powershell -Command \"Disable-NetAdapterPowerManagement -Name '{adapterName}' -ErrorAction SilentlyContinue\"");
 
-            // Registry optimizations for all adapters
+        
             try
             {
                 using (RegistryKey adaptersKey = Registry.LocalMachine.OpenSubKey(
@@ -478,22 +470,22 @@ namespace UltimatePingOptimizer
                                 {
                                     if (adapterKey != null)
                                     {
-                                        // Disable Flow Control
+                                       
                                         adapterKey.SetValue("*FlowControl", "0", RegistryValueKind.String);
 
-                                        // Disable Interrupt Moderation
+                                     
                                         adapterKey.SetValue("*InterruptModeration", "0", RegistryValueKind.String);
 
-                                        // Enable RSS
+                                      
                                         adapterKey.SetValue("*RSS", "1", RegistryValueKind.String);
 
-                                        // Disable Power Saving
+                                       
                                         adapterKey.SetValue("*PMARPOffload", "0", RegistryValueKind.String);
                                         adapterKey.SetValue("*PMNSOffload", "0", RegistryValueKind.String);
                                         adapterKey.SetValue("*PMWiFiRekeyOffload", "0", RegistryValueKind.String);
                                         adapterKey.SetValue("PnPCapabilities", 24, RegistryValueKind.DWord);
 
-                                        // Speed & Duplex - Auto
+                                        /
                                         adapterKey.SetValue("*SpeedDuplex", "0", RegistryValueKind.String);
                                     }
                                 }
@@ -506,19 +498,19 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== DISABLE AUTO-TUNING ==========
+       
         static void DisableAutoTuning()
         {
             RunCommand("netsh int tcp set global autotuninglevel=disabled");
             RunCommand("netsh int tcp set global rsc=disabled");
         }
 
-        // ========== SET QoS PRIORITY ==========
+     
         static void SetQoSPriority()
         {
             try
             {
-                // Set Roblox as high priority in QoS
+                
                 using (RegistryKey key = Registry.LocalMachine.CreateSubKey(
                     @"SOFTWARE\Policies\Microsoft\Windows\QoS\Roblox"))
                 {
@@ -541,7 +533,7 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== KILL ALL BANDWIDTH APPS ==========
+        // APPS 
         static void KillAllBandwidthApps()
         {
             string[] bandwidthHogs = {
@@ -572,7 +564,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== BOOST ROBLOX PRIORITY ==========
+      
         static void BoostRobloxPriority()
         {
             PrintColored("\n  [+] Boosting Roblox Priority...", ConsoleColor.Cyan);
@@ -592,7 +584,7 @@ namespace UltimatePingOptimizer
                 {
                     p.PriorityClass = ProcessPriorityClass.RealTime;
 
-                    // Set CPU affinity to all cores
+                   
                     int coreCount = Environment.ProcessorCount;
                     long affinity = (1L << coreCount) - 1;
                     p.ProcessorAffinity = (IntPtr)affinity;
@@ -619,14 +611,14 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== CLEAN RAM ==========
+        
         static void CleanRAM()
         {
             PrintColored("\n  [+] Cleaning RAM Memory...", ConsoleColor.Cyan);
 
             try
             {
-                // Clear working sets of all processes
+               
                 Process[] processes = Process.GetProcesses();
                 foreach (Process p in processes)
                 {
@@ -637,12 +629,12 @@ namespace UltimatePingOptimizer
                     catch { }
                 }
 
-                // Force garbage collection
+                
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
 
-                // Clear standby list (requires admin)
+                
                 RunCommand("powershell -Command \"Clear-RecycleBin -Force -ErrorAction SilentlyContinue\"");
 
                 PrintColored("  [✓] RAM Cleaned!", ConsoleColor.Green);
@@ -653,7 +645,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== DISABLE UNNECESSARY SERVICES ==========
+        
         static void DisableUnnecessaryServices()
         {
             PrintColored("\n  [+] Disabling Unnecessary Services...", ConsoleColor.Cyan);
@@ -685,7 +677,6 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== CREATE RESTORE POINT ==========
         static void CreateRestorePoint()
         {
             try
@@ -695,7 +686,7 @@ namespace UltimatePingOptimizer
             catch { }
         }
 
-        // ========== REAL-TIME PING MONITOR ==========
+       
         static void RealTimePingMonitor()
         {
             PrintColored("\n  [+] Starting Real-Time Ping Monitor...", ConsoleColor.Cyan);
@@ -751,7 +742,6 @@ namespace UltimatePingOptimizer
             Console.WriteLine();
         }
 
-        // ========== FULL OPTIMIZATION ==========
         static void FullOptimization()
         {
             PrintColored("\n  [===== STARTING FULL OPTIMIZATION =====]\n", ConsoleColor.Yellow);
@@ -767,7 +757,7 @@ namespace UltimatePingOptimizer
             PrintColored("  [!] Restart your PC for best results.\n", ConsoleColor.Yellow);
         }
 
-        // ========== FLUSH DNS & RESET NETWORK ==========
+        
         static void FlushAndResetNetwork()
         {
             PrintColored("\n  [+] Flushing DNS & Resetting Network...", ConsoleColor.Cyan);
@@ -805,7 +795,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== TCP/IP OPTIMIZATIONS ==========
+   
         static void ApplyTcpOptimizations()
         {
             PrintColored("\n  [+] Applying TCP/IP Optimizations...", ConsoleColor.Cyan);
@@ -845,7 +835,7 @@ namespace UltimatePingOptimizer
             PrintColored("  [✓] TCP/IP Optimizations Applied!", ConsoleColor.Green);
         }
 
-        // ========== SET FASTEST DNS ==========
+       
         static void SetFastestDNS()
         {
             PrintColored("\n  [+] Setting Fastest DNS Servers...", ConsoleColor.Cyan);
@@ -909,7 +899,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== DISABLE NAGLE ALGORITHM ==========
+      
         static void DisableNagleAlgorithm()
         {
             PrintColored("\n  [+] Disabling Nagle Algorithm...", ConsoleColor.Cyan);
@@ -944,7 +934,7 @@ namespace UltimatePingOptimizer
             }
         }
 
-        // ========== KILL BANDWIDTH HOGS ==========
+    
         static void KillBandwidthHogs()
         {
             PrintColored("\n  [+] Scanning for Bandwidth-Hogging Apps...", ConsoleColor.Cyan);
@@ -988,7 +978,7 @@ namespace UltimatePingOptimizer
             PrintColored("  [✓] Bandwidth Cleanup Complete!", ConsoleColor.Green);
         }
 
-        // ========== OPTIMIZE NETWORK ADAPTER ==========
+       
         static void OptimizeNetworkAdapter()
         {
             PrintColored("\n  [+] Optimizing Network Adapter...", ConsoleColor.Cyan);
@@ -1022,7 +1012,6 @@ namespace UltimatePingOptimizer
             PrintColored("  [✓] Network Adapter Optimized!", ConsoleColor.Green);
         }
 
-        // ========== TEST ROBLOX PING ==========
         static void TestRobloxPing()
         {
             PrintColored("\n  [+] Testing Ping to Roblox Servers...\n", ConsoleColor.Cyan);
@@ -1084,7 +1073,7 @@ namespace UltimatePingOptimizer
             PrintColored("      > 100ms = Poor", ConsoleColor.Red);
         }
 
-        // ========== RESTORE DEFAULTS ==========
+       
         static void RestoreDefaults()
         {
             PrintColored("\n  [+] Restoring Default Network Settings...", ConsoleColor.Cyan);
@@ -1102,7 +1091,7 @@ namespace UltimatePingOptimizer
                 RunCommand(cmd);
             }
 
-            // Re-enable services
+         
             string[] services = { "DiagTrack", "dmwappushservice", "WSearch", "SysMain" };
             foreach (string service in services)
             {
@@ -1113,7 +1102,7 @@ namespace UltimatePingOptimizer
             PrintColored("  [✓] Defaults Restored! Restart your PC.", ConsoleColor.Green);
         }
 
-        // ========== HELPER METHODS ==========
+        
         static void RunCommand(string command)
         {
             try
@@ -1166,4 +1155,5 @@ namespace UltimatePingOptimizer
             Console.ForegroundColor = defaultColor;
         }
     }
+
 }
