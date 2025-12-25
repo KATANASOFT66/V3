@@ -20,22 +20,12 @@ V3 works by editing system registries to optimize network parameters, resulting 
 - Streaming applications
 - Any network-dependent software
 
-## Installation
 
-[Add installation instructions here]
 
-## Usage
-
-[Add usage instructions here]
 
 ## Requirements
 
-[Add system requirements here]
+windows 7,8,8.1,10,11 or windows11lite
 
-## Support
 
-For issues or questions, please create an issue in this repository.
 
-## License
-
-[Add license information here]
